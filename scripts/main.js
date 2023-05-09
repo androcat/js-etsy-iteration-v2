@@ -35,6 +35,9 @@
   }
 
   // Show me how to calculate how many items were made by their sellers
+  function findNumBestSellers(arr) {
+    return arr.filter((obj) => obj.who_made === "i_did").length;
+  }
 
   console.log(`The average price is ${calcMean(items)}`);
   console.log(
@@ -47,4 +50,5 @@
     console.log(`${obj.title}`);
     obj.materials.forEach((materialName) => console.log(materialName));
   });
+  console.log(`${findNumBestSellers(items)} items were made by their sellers.`);
 })();
