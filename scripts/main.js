@@ -19,9 +19,15 @@
     return arr.filter((obj) => obj.price >= 14 && obj.price <= 18);
   }
 
+  // Show me how find the item with a "GBP" currency code and print its name and price
+  function findGBP(arr) {
+    return arr.filter((obj) => obj.currency_code === "GBP"); //returns an array of one obj
+  }
+
   console.log(`The average price is ${calcMean(items)}`);
   console.log(
     `Items that cost between $14.00 USD and $18.00 USD:`,
     filterPrices(items)
   );
+  console.log(`${findGBP(items)[0].title} costs £${findGBP(items)[0].price}`);
 })();
