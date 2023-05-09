@@ -24,10 +24,27 @@
     return arr.filter((obj) => obj.currency_code === "GBP"); //returns an array of one obj
   }
 
+  // Show me how to find which items are made of wood.
+  function filterWoodMaterial(arr) {
+    return arr.filter((obj) => obj.materials.includes("wood"));
+  }
+
+  // Show me how to find which items are made of eight or more materials
+  function filterEightMaterials(arr) {
+    return arr.filter((obj) => obj.materials.length >= 8);
+  }
+
+  // Show me how to calculate how many items were made by their sellers
+
   console.log(`The average price is ${calcMean(items)}`);
   console.log(
     `Items that cost between $14.00 USD and $18.00 USD:`,
     filterPrices(items)
   );
   console.log(`${findGBP(items)[0].title} costs £${findGBP(items)[0].price}`);
+  filterWoodMaterial(items).forEach((obj) => console.log(`${obj.title}`));
+  filterEightMaterials(items).forEach((obj) => {
+    console.log(`${obj.title}`);
+    obj.materials.forEach((materialName) => console.log(materialName));
+  });
 })();
