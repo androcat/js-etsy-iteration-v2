@@ -14,5 +14,14 @@
     // Why ? because via * and then / we reformat via the '00'
   }
 
+  // Show me how to get an array of items that cost between $14.00 and $18.00 USD
+  function filterPrices(arr) {
+    return arr.filter((obj) => obj.price >= 14 && obj.price <= 18);
+  }
+
   console.log(`The average price is ${calcMean(items)}`);
+  console.log(
+    `Items that cost between $14.00 USD and $18.00 USD:`,
+    filterPrices(items)
+  );
 })();
